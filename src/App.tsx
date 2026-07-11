@@ -1,5 +1,5 @@
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { LeadProvider } from './store/LeadContext'
 import LandingPage from './pages/LandingPage'
 import BitrixPage from './pages/BitrixPage'
@@ -21,13 +21,13 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <LeadProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/bitrix" element={<BitrixPage />} />
             <Route path="/scheme" element={<SchemePage />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </LeadProvider>
     </ThemeProvider>
   )
